@@ -9,13 +9,13 @@ class SideMenu extends Component {
           <Icon name='home' />
           Home
         </Menu.Item>
-        <Menu.Item name='gamepad'>
-          <Icon name='gamepad' />
-          Games
+        <Menu.Item name='signin'>
+          <Icon name='sign in' />
+          ログイン
         </Menu.Item>
-        <Menu.Item name='camera'>
-          <Icon name='camera' />
-          Channels
+        <Menu.Item name='signup'>
+          <Icon name='add user' />
+          新規登録
         </Menu.Item>
       </Sidebar>
     );
