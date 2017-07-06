@@ -9,7 +9,6 @@ class App extends Component {
   state = { visible: false }
 
   toggleSideMenu = () => {
-    console.log("visible" + this.state.visible)
     this.setState({ visible: !this.state.visible })
   }
   
@@ -19,8 +18,8 @@ class App extends Component {
         <Sidebar.Pushable>
           <SideMenu visible={this.state.visible} />
           <Sidebar.Pusher>
-            <TopMenu />
-            <Contents onClick={ () => this.toggleSideMenu() } />
+            <TopMenu onClick={ () => this.toggleSideMenu() } />
+            <Contents />
           </Sidebar.Pusher>
         </Sidebar.Pushable>
       </div>
