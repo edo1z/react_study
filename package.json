@@ -9,7 +9,8 @@
   },
   "devDependencies": {
     "semantic-ui-css": "^2.2.10",
-    "semantic-ui-react": "^0.70.0"
+    "semantic-ui-react": "^0.70.0",
+    "superagent": "^3.5.2"
   },
   "scripts": {
     "start": "react-scripts start",
