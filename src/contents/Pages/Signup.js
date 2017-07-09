@@ -3,12 +3,17 @@ import request from 'superagent'
 import { Container, Form, Button } from 'semantic-ui-react'
 
 class Signup extends Component {
-  state = {num: ''}
-  
+  state = {
+    num: '',
+    loading: false,
+    disabled: false
+  }
   change = (e) => {
     this.setState({num:e.target.value})
   }
   post = (e) => {
+    this.submit_disable()
+    let that = this
     request
       .post('http://localhost:1323/number')
       .type('form')
@@ -18,8 +23,21 @@ class Signup extends Component {
         if(!err){
           console.log(res)
         }
+        that.submit_able()
       })
     e.preventDefault()
+  }
+  submit_disable = () => {
+    this.setState({
+      loading: true,
+      disable: true
+    })
+  }
+  submit_able = () => {
+    this.setState({
+      loading: false,
+      disable: false
+    })
   }
   
   render() {
@@ -34,7 +52,7 @@ class Signup extends Component {
             <label>Number</label>
             <input placeholder='Number' onChange={(e) => this.change(e)} />
           </Form.Field>
-          <Button type='submit'>Submit</Button>
+          <Button loading={this.state.loading} disabled={this.state.disabled} type='submit'>Submit</Button>
         </Form>
         
       </Container>
